@@ -5,19 +5,29 @@ import LogoDark from "../assets/img/logo-dark.svg";
 
 const Header = () => {
   const [header, setHeader] = useState(false);
-  useEffect(()=> {
-    window.addEventListener('scroll', ()=> {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
       window.scrollY > 50 ? setHeader(true) : setHeader(false);
-    })
-  })
+    });
+  });
   return (
-    <div
+    <header
       className={`${
         header ? "bg-white py-6 shadow-lg" : "bg-transparent py-8"
-      } fixed z-50 w-full transition-all duration-300`}
+      } fixed z-50 w-full transition-all duration-500`}
     >
-      Header
-    </div>
+      <div className="container mx-auto">
+        {/* logo */}
+        <a href="/">
+          {header ? (
+            <img className="w-[160px]" src={LogoDark} />
+          ) : (
+            <img className="w-[160px]" src={LogoWhite} />
+          )}
+        </a>
+        {/* nav */}
+      </div>
+    </header>
   );
 };
 

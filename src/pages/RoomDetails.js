@@ -35,7 +35,7 @@ const RoomDetails = () => {
         </h1>
       </div>
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex.row h-full py-24">
+        <div className="flex flex-col lg:flex-row h-full py-24">
           {/* left */}
           <div className="w-full h-full lg:w-[60%] px-6">
             <h2 className="h2">{name}</h2>
@@ -56,7 +56,10 @@ const RoomDetails = () => {
                   // destructure item
                   const { name, icon } = item;
                   return (
-                    <div className="flex items-center gap-x-3 flex-1" key={index}>
+                    <div
+                      className="flex items-center gap-x-3 flex-1"
+                      key={index}
+                    >
                       <div
                         className="text-3xl text-accent
                       "
@@ -81,19 +84,50 @@ const RoomDetails = () => {
             <div className="py-8 px-6 bg-accent/20 mb-12">
               <div className="flex flex-col space-y-4 mb-4">
                 <h3>Your Reservation</h3>
-                <div>
+                <div className="h-[60px]">
                   <CheckIn />
                 </div>
-                <div>
+                <div className="h-[60px]">
                   <CheckOut />
                 </div>
-                <div>
+                <div className="h-[60px]">
                   <AdultsDropdown />
                 </div>
-                <div>
+                <div className="h-[60px]">
                   <KidsDropdown />
                 </div>
+                <button className="btn btn-lg btn-primary w-full">
+                  book now for ${price}
+                </button>
               </div>
+            </div>
+            {/* rules */}
+            <div>
+            <h3 className="h3">Hotel Rules</h3>
+            <p className="mb-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
+              architecto ut, esse facere neque animi explicabo odio, cumque
+              reprehenderit iste quod nesciunt omnis laudantium nemo velit.
+              Inventore enim porro quod.
+            </p>
+            <ul className="flex flex-col gap-y-4">
+              <li className="flex items-center gap-x-4">
+                <FaCheck className="text-accent" />
+                Check-in 3:00 PM - 9:00 PM
+              </li>
+              <li className="flex items-center gap-x-4">
+                <FaCheck className="text-accent" />
+                Check-out 10:30 PM
+              </li>
+              <li className="flex items-center gap-x-4">
+                <FaCheck className="text-accent" />
+                No pets
+              </li>
+              <li className="flex items-center gap-x-4">
+                <FaCheck className="text-accent" />
+                No Smoking
+              </li>
+            </ul>
             </div>
           </div>
         </div>

@@ -21,9 +21,9 @@ const Header = () => {
         {/* logo */}
         <a href="/">
           {header ? (
-            <img className="w-[160px]" src={LogoDark} />
+            <img className="w-[160px]" src={LogoDark} alt=" " />
           ) : (
-            <img className="w-[160px]" src={LogoWhite} />
+            <img className="w-[160px]" src={LogoWhite} alt=" " />
           )}
         </a>
         {/* nav */}
